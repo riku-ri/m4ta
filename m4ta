@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+while read -N 1 c ; do
+	buffer="$c"
+	if test "$c" '=' '[' ; then
+		while read -N 1 c ; do
+			if test "$c" '!=' '[' ; then
+				break
+			fi
+			buffer="$buffer$c"
+			l="$buffer"
+			if test "$c" '=' "'" ; then
+			fi
+		done
+	elif
+	fi
+	#printf %s "$c"
+done
